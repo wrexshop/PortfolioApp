@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   # Portfolio routes
   resources :portfolios
+  
 end
