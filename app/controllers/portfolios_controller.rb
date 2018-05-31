@@ -1,11 +1,14 @@
 class PortfoliosController < ApplicationController
   # Remember: before_action is only for update show delete edit
-  before_action :set_portfolio_id, only: [:edit, :update]
+  before_action :set_portfolio_id, only: [:update, :show, :edit]
 
   def index
     @portfolio_items = Portfolio.all
   end
   
+  def show
+  end
+
   def new
     @portfolio_item = Portfolio.new
   end
