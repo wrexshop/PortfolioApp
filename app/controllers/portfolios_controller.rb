@@ -1,12 +1,20 @@
 class PortfoliosController < ApplicationController
   # Remember: before_action is only for update show delete edit
-  before_action :set_portfolio_id, only: [:update, :show, :edit]
+  before_action :set_portfolio_id, only: [:update, :show, :edit, :destroy]
 
   def index
     @portfolio_items = Portfolio.all
   end
   
   def show
+  end
+
+  def destroy
+    @portfolio_item.destroy
+
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: 'The portfolio item was deleted.' }
+    end
   end
 
   def new
