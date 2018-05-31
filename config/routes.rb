@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  
-  # Pages routes
-  get 'pages/home'
-  get 'pages/about'
-  get 'pages/contact'
+  # Set application home page
+  root to: 'pages#home'
+
+  # Exmaple of custom routes
+  get 'about', to: 'pages#about'
+  get 'contact', to: 'pages#contact'
 
   # Blogs routes
   resources :blogs
