@@ -4,4 +4,7 @@ class Blog < ApplicationRecord
 
   extend FriendlyId
   friendly_id :title, use: :slugged
+
+  # Prevent blogs to be created unless there is a title and body
+  validates_presence_of :title, :body
 end
