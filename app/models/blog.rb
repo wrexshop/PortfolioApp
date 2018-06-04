@@ -7,4 +7,6 @@ class Blog < ApplicationRecord
 
   # Prevent blogs to be created unless there is a title and body
   validates_presence_of :title, :body
+
+  belongs_to :topic
 end
