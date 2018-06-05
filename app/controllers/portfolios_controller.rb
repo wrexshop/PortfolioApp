@@ -2,10 +2,16 @@ class PortfoliosController < ApplicationController
   # Remember: before_action is only for update show delete edit
   before_action :set_portfolio_id, only: [:update, :show, :edit, :destroy]
 
+
+  # Custom action - for custom scope
+  def angular
+    @angular_portfolio_items = Portfolio.angular
+  end
+  
   def index
     @portfolio_items = Portfolio.all
   end
-  
+
   def show
   end
 
