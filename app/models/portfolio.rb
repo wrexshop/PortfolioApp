@@ -5,6 +5,11 @@ class Portfolio < ApplicationRecord
   # Parent of technology
   has_many :technologies
   
+  # To allow multiple technogies when create a portfolio.
+  # IF name attribute is null do not accept
+  accepts_nested_attributes_for :technologies, 
+                                  reject_if: lambda { |attrs| attrs['name'].blank? }
+
   # Unable to create a portfolio unless all data has been filled.
   validates_presence_of :title, :body, :main_image, :thumb_image
 
