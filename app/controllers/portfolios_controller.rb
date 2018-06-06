@@ -1,6 +1,6 @@
 class PortfoliosController < ApplicationController
   # Remember: before_action is only for update show delete edit
-  before_action :set_portfolio_id, only: [:update, :show, :edit, :destroy]
+  before_action :portfolio_id, only: [:update, :show, :edit, :destroy]
 
 
   # Custom action - for custom scope
@@ -28,7 +28,7 @@ class PortfoliosController < ApplicationController
   end
 
   def create 
-    @portfolio_item = Portfolio.new(allowed_portfolio_params)
+    @portfolio_item = Portfolio.new(allowed_params)
 
     respond_to do |format|
       if @portfolio_item.save
@@ -45,7 +45,7 @@ class PortfoliosController < ApplicationController
 
   def update
     respond_to do |format|
-      if @portfolio_item.update(allowed_portfolio_params)
+      if @portfolio_item.update(allowed_params)
         # Redirect to index page
         format.html { redirect_to portfolios_path, notice: 'Your portfolio successfully updated.' }
       else
@@ -56,13 +56,13 @@ class PortfoliosController < ApplicationController
 
   private
 
-  def allowed_portfolio_params
+  def allowed_params
     params.require(:portfolio).permit(:title, 
                                       :subtitle, 
                                       :body)
   end
 
-  def set_portfolio_id
+  def portfolio_id
     @portfolio_item = Portfolio.find(params[:id])
   end
 
