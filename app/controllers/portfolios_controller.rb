@@ -25,6 +25,9 @@ class PortfoliosController < ApplicationController
 
   def new
     @portfolio_item = Portfolio.new
+
+    # Hard coded version - will change later in the course
+    3.times { @portfolio_item.technologies.build }
   end
 
   def create 
@@ -59,11 +62,11 @@ class PortfoliosController < ApplicationController
   def allowed_params
     params.require(:portfolio).permit(:title, 
                                       :subtitle, 
-                                      :body)
+                                      :body,
+                                      technologies_attributes: [:name])
   end
 
   def portfolio_id
     @portfolio_item = Portfolio.find(params[:id])
   end
-
 end
