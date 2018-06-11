@@ -1,6 +1,6 @@
 class Portfolio < ApplicationRecord
   # Access to Placeholder concern methods
-  include Placeholder
+  include ConcernPlaceholder
 
   # Parent of technology
   has_many :technologies

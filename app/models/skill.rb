@@ -1,6 +1,6 @@
 class Skill < ApplicationRecord
   # Grant access to Placeholder concern methods
-  include Placeholder
+  include ConcernPlaceholder
 
   # Data validation
   validates_presence_of :title, :percent_utilized

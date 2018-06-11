@@ -1,4 +1,4 @@
-module Placeholder
+module ConcernPlaceholder
   extend ActiveSupport::Concern
 
   def self.image_generator(height:, width:)
