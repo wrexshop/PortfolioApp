@@ -1,6 +1,10 @@
 class PortfoliosController < ApplicationController
   # Remember: before_action is only for update show delete edit
-  before_action :portfolio_id, only: [:update, :show, :edit, :destroy]
+  before_action :portfolio_id, only: [:update, 
+                                      :show, 
+                                      :edit, 
+                                      :destroy
+                                      ]
 
 
   # Custom action - for custom scope

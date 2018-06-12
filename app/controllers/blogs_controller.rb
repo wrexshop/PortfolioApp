@@ -1,6 +1,11 @@
 class BlogsController < ApplicationController
   # allows actions to have access to the @blogs instance variable
-  before_action :set_blog_id, only: [:show, :edit, :update, :destroy, :toggle_status]
+  before_action :set_blog_id, only: [:show, 
+                                     :edit, 
+                                     :update, 
+                                     :destroy, 
+                                     :toggle_status
+                                    ]
 
   # GET /blogs
   def index
