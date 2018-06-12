@@ -19,14 +19,14 @@ class PortfoliosController < ApplicationController
     @portfolio_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to portfolios_url, notice: 'The portfolio item was deleted.' }
+      redirect_and_notice(format, message:'The portfolio item was deleted.')
     end
   end
 
   def new
     @portfolio_item = Portfolio.new
 
-    # Hard coded version - will change later in the course
+    # Hard coded version - This will change later in the course
     3.times { @portfolio_item.technologies.build }
   end
 
@@ -36,7 +36,7 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       if @portfolio_item.save
         # Redirect to index page
-        format.html { redirect_to portfolios_path, notice: 'Your portfolio is now live.' }
+        redirect_and_notice(format, message:'Your portfolio is now live.')
       else
         format.html { render :new }
       end
@@ -50,7 +50,7 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       if @portfolio_item.update(allowed_params)
         # Redirect to index page
-        format.html { redirect_to portfolios_path, notice: 'Your portfolio successfully updated.' }
+        redirect_and_notice(format, message:'Your portfolio successfully updated.')
       else
         format.html { render :edit }
       end
@@ -59,11 +59,16 @@ class PortfoliosController < ApplicationController
 
   private
 
+  def redirect_and_notice(format, message:)
+    format.html { redirect_to portfolios_path, notice: message }
+  end
+
   def allowed_params
     params.require(:portfolio).permit(:title, 
                                       :subtitle, 
                                       :body,
-                                      technologies_attributes: [:name])
+                                      technologies_attributes: [:name]
+                                      )
   end
 
   def portfolio_id
