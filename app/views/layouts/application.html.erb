@@ -22,9 +22,7 @@
     <!--Views are passed in here.-->
     <%= yield %>
 
-    <% if session[:source] %>
-      Thanks for visiting me from <%= session[:source] %>
-    <% end %>
+    <%= source_helper("application") %>
 
   </body>
 </html>
