@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyPortfolio</title>
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <meta name="keywords" content="<%= @seo_keywords %>">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -13,6 +15,14 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <div>
+      <div><%= link_to "Home", root_path %></div>
+      <div><%= link_to "About", about_path %></div>
+      <div><%= link_to "Contact", contact_path %></div>
+      <div><%= link_to "Blogs", blogs_path %></div>
+      <div><%= link_to "Portfolios", portfolios_path %></div>
+    </div>
+
     <% if current_user.is_a?(OpenStruct) %>
       <%= link_to "Login", new_user_session_path %>
       <%= link_to "Register", new_user_registration_path %>
@@ -20,6 +30,7 @@
       <%= link_to "Log out", destroy_user_session_path, method: :delete %>
     <% end %>
     
+    <!--This were the views are passed in. -->
     <%= yield %>
 
     <% if session[:source] %>
