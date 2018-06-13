@@ -1,5 +1,6 @@
 module ApplicationHelper
   
+  # Displayed on home page
   def sample_helper
     content_tag(:div, "Sample Helper!")
   end
