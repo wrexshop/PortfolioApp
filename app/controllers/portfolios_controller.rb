@@ -5,7 +5,7 @@ class PortfoliosController < ApplicationController
                                       :edit, 
                                       :destroy
                                       ]
-
+  layout 'portfolio'
 
   # Custom action - for custom scope
   def angular

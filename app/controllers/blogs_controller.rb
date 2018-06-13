@@ -6,6 +6,7 @@ class BlogsController < ApplicationController
                                      :destroy, 
                                      :toggle_status
                                     ]
+  layout "blog"
 
   # GET /blogs
   def index
