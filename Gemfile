@@ -64,3 +64,6 @@ gem 'jquery-rails'
 
 # My custom built gem
 gem 'wrex_view_tool', git: 'https://github.com/wrexshop/wrex_view_tool'
+
+# For User Authorization
+gem 'petergate', '~> 1.8', '>= 1.8.1'
