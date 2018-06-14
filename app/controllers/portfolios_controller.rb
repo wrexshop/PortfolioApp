@@ -1,8 +1,8 @@
 class PortfoliosController < ApplicationController
   # Remember: before_action is only for update show delete edit
   before_action :portfolio_id, only: [:update, 
+                                      :edit,
                                       :show, 
-                                      :edit, 
                                       :destroy
                                       ]
   layout 'portfolio'
