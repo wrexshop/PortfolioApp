@@ -3,5 +3,4 @@ class ApplicationController < ActionController::Base
   include ConcernSetSource
   include ConcernCurrentUser
   include ConcernDefaultPageContent
-  
 end

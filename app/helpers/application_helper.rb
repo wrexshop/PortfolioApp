@@ -23,4 +23,10 @@ module ApplicationHelper
     end
   end
 
+  def set_copyright
+    msg = 'All rights reserved.'
+    my_name = 'Powered by Justin Ramos'
+
+    WrexViewTool::Renderer.copyright my_name, msg 
+  end
 end
