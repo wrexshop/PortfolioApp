@@ -6,7 +6,11 @@ class BlogsController < ApplicationController
                                      :destroy, 
                                      :toggle_status
                                     ]
+  # Use blog layout
   layout "blog"
+
+  # Specific actions for user roles
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   # GET /blogs
   def index

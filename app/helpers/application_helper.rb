@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   def login_helper
-    if current_user.is_a?(OpenStruct)
+    if current_user.is_a?(GuestUser)
       (login = link_to "Login", new_user_session_path) +
       "<br>".html_safe + 
       (register = link_to "Register", new_user_registration_path)
@@ -25,7 +25,7 @@ module ApplicationHelper
 
   def set_copyright
     msg = 'All rights reserved.'
-    my_name = 'Powered by Justin Ramos'
+    my_name = 'Powered by Wrexshop Productions'
 
     WrexViewTool::Renderer.copyright my_name, msg 
   end
