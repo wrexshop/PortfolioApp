@@ -14,17 +14,17 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <body class="text-center">
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
 
-    <%= render "shared/nav", location: "top" %>
+        <%= render "shared/application_nav" %>
+        
+        <!--Views are passed in here.-->
+        <%= yield %>
 
-    <%= login_helper %>
-    
-    <!--Views are passed in here.-->
-    <%= yield %>
-    <%= set_copyright %>
-    <%= source_helper("application") %>
-  </body>
+        <%= render "shared/application_footer" %>
+
+        <%= source_helper("application") %>
+    </div>
+  </body>  
 </html>
