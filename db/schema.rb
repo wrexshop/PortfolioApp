@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_06_06_213757) do
-=======
-ActiveRecord::Schema.define(version: 2018_06_09_162547) do
->>>>>>> 48a5ea5051935a35f281f7d353d5df52519d3193
+ActiveRecord::Schema.define(version: 2018_06_15_175308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,8 +70,6 @@ ActiveRecord::Schema.define(version: 2018_06_09_162547) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-=======
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -90,11 +84,11 @@ ActiveRecord::Schema.define(version: 2018_06_09_162547) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "roles"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
->>>>>>> 48a5ea5051935a35f281f7d353d5df52519d3193
   add_foreign_key "blogs", "topics"
   add_foreign_key "technologies", "portfolios"
 end
