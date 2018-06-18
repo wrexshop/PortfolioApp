@@ -1,4 +1,7 @@
 class Blog < ApplicationRecord
+  # Limit number of blogs per page
+  paginates_per 5
+
   # in order to toggle the status of the blog
   enum status: { draft: 0, published: 1 }
 

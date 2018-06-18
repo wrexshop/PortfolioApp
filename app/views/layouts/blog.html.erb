@@ -15,24 +15,25 @@
   </head>
 
   <body>
+    
     <%= render "shared/blog_nav" %>
 
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8 blog-main">
-          <h3 class="pb-3 mb-4 font-italic border-bottom">My Blog</h3>
-          <%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin) %>
+          <%= render 'shared/blog_masthead' %> 
 
           <%= yield %> 
         </div>
-        
+      
         <%= render 'shared/blog_sidebar' %>
 
-      </div>
+       </div>
     </main>
 
     <%= render 'shared/blog_footer' %>
+
     <%= source_helper("blog") %>
-    
+
   </body>
 </html>

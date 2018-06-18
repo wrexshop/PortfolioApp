@@ -67,3 +67,9 @@ gem 'wrex_view_tool', git: 'https://github.com/wrexshop/wrex_view_tool'
 
 # For User Authorization
 gem 'petergate', '~> 1.8', '>= 1.8.1'
+
+# For awesome icons
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+
+# For pagination
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
