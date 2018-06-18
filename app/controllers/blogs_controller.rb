@@ -10,7 +10,9 @@ class BlogsController < ApplicationController
   layout "blog"
 
   # Specific actions for user roles
-  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+  access all: [:show, :index], 
+         user: {except: [:toggle_status, :destroy, :new, :create, :update, :edit]}, 
+         site_admin: :all
 
   # GET /blogs
   def index
