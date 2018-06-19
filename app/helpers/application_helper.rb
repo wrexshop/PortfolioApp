@@ -29,4 +29,40 @@ module ApplicationHelper
 
     WrexViewTool::Renderer.copyright my_name, msg 
   end
+
+  def nav_items
+    [
+      {
+        url: root_path,
+        title: 'Home'
+      },
+      {
+        url: about_path,
+        title: 'About'
+      },
+      {
+        url: contact_path,
+        title: 'Contacts'
+      },
+      {
+        url: blogs_path,
+        title: 'Blogs'
+      },
+      {
+        url: portfolios_path,
+        title: 'Portfolios'
+      }
+    ]
+  end
+
+  def nav_helper style, tag_type
+    nav_links = ''
+
+    nav_items.each do |item|
+      nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style}'>#{item[:title]}</a></#{tag_type}>"
+    end
+
+    nav_links.html_safe
+  end
+
 end
