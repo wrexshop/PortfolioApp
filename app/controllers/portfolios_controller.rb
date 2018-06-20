@@ -7,7 +7,10 @@ class PortfoliosController < ApplicationController
                                       ]
   layout 'portfolio'
 
-  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+  access all: [:show, :index, :angular], 
+         user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, 
+         site_admin: :all
+
   # Custom action - for custom scope
   def angular
     @angular_portfolio_items = Portfolio.angular
