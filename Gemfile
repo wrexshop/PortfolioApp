@@ -74,6 +74,11 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 # For pagination
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 
+# For drag and drop (portfolio page)
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
+# Nested Attributes
 gem 'cocoon', '~> 1.2', '>= 1.2.11'
+
+# Error notification
+gem 'gritter', '~> 1.2'
