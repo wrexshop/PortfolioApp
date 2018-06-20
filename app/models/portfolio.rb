@@ -7,7 +7,8 @@ class Portfolio < ApplicationRecord
   
   # To allow multiple technogies when create a portfolio.
   # IF name attribute is null do not accept
-  accepts_nested_attributes_for :technologies, 
+  accepts_nested_attributes_for :technologies,
+                                allow_destroy: true, 
                                   reject_if: lambda { |attrs| attrs['name'].blank? }
 
   # Unable to create a portfolio unless all data has been filled.

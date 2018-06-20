@@ -25,6 +25,7 @@ class PortfoliosController < ApplicationController
       Portfolio.find(value[:id]).update(position: value[:position])
     end
 
+    # Tell rails not to go anywhere
     head :ok
   end
 
@@ -41,9 +42,6 @@ class PortfoliosController < ApplicationController
 
   def new
     @portfolio_item = Portfolio.new
-
-    # Hard coded version - This will change later in the course
-    3.times { @portfolio_item.technologies.build }
   end
 
   def create 
@@ -83,7 +81,7 @@ class PortfoliosController < ApplicationController
     params.require(:portfolio).permit(:title, 
                                       :subtitle, 
                                       :body,
-                                      technologies_attributes: [:name, :id]
+                                      technologies_attributes: [:name, :id, :_destroy]
                                       )
   end
 
